@@ -16,6 +16,7 @@ class Blockchain{
     crearBloque(transaccion){
         let prevBlock = this.ultimoBloque();
         var bloq = new bloque2(this.bloque.length, new Date, prevBlock.hash, transaccion);
+        bloq.minar(2);
         this.bloque.push(bloq);
     }
 

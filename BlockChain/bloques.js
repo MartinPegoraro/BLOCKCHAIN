@@ -12,12 +12,24 @@ class Bloque{
         return SHA256(this.index + this.date.toString() + this.data).toString();
     }
 
-    minar(dificultad) {
-        while (!this.hash.startsWith(dificultad)) {
-            this.nonce++;
-            this.hash = this.createHash();
-        }
+    minar(difficulty){
+        var i;
+        var cont;
+        cont = 50;
+        while (cont !== difficulty){
+            cont = 0;
+            for (i = 0; i < this.hash.length; i++) {
+                if (this.hash.charAt(i) == "0"){
+                  cont++;     
+                }    
+            } 
+            if (cont == difficulty){
+                console.log("bloque minado: "+this.hash);
+            } else {
+                this.nonce++;
+                this.hash = this.crearHash();
+            }
+        } 
     }
-
 }
 module.exports=Bloque;

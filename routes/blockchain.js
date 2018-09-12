@@ -5,10 +5,12 @@ var url = require('url-parse')
 
 var Blockchain = require('../BlockChain/blockchain');
 
+var transaccion=require('../BlockChain/Transaccion');
+
 var b = new Blockchain();
 
 
-var transaccion=require('../BlockChain/Transaccion');
+
 
 
 router.get('/', function(req, res, next) {  
