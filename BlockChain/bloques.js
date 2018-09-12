@@ -24,7 +24,7 @@ class Bloque{
                 }    
             } 
             if (cont == difficulty){
-                console.log("bloque minado: "+this.hash);
+                console.log("Se mino el bloque: "+this.hash);
             } else {
                 this.nonce++;
                 this.hash = this.crearHash();
